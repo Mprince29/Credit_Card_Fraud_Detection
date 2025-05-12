@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a Model</h1>
+        <form method="POST">
+            <label><input type="radio" name="model" value="logistic" required> Logistic Regression</label><br>
+            <label><input type="radio" name="model" value="tree"> Decision Tree</label><br>
+            <label><input type="radio" name="model" value="forest"> Random Forest</label><br><br>
+            <button type="submit">Train and Evaluate</button>
+        </form>
+    </div>
+</body>
+</html>

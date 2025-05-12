@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ model }} Results</h1>
+        <p><strong>Accuracy:</strong> {{ accuracy }}%</p>
+
+        <h2>Confusion Matrix:</h2>
+        <table border="1">
+            {% for row in matrix %}
+            <tr>
+                {% for val in row %}
+                <td>{{ val }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Classification Report:</h2>
+        <table border="1">
+            <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1-score</th><th>Support</th></tr>
+            {% for label, metrics in report.items() if label in ['0', '1'] %}
+            <tr>
+                <td>{{ label }}</td>
+                <td class="metrics-highlight">{{ "%.2f"|format(metrics['precision']) }}</td>
+                <td class="metrics-highlight">{{ "%.2f"|format(metrics['recall']) }}</td>
+                <td class="metrics-highlight">{{ "%.2f"|format(metrics['f1-score']) }}</td>
+                <td>{{ metrics['support'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br><a href="/">Try Another Model</a>
+    </div>
+</body>
+</html>

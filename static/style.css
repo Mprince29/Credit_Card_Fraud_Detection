@@ -1,0 +1,114 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #2c3e50;
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+form {
+    background: #ffffff;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    margin: 10px 0;
+    color: #2d3436;
+}
+
+button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #74b9ff;
+    transform: translateY(-2px);
+}
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    animation: fadeIn 1s ease;
+}
+
+table, th, td {
+    border: 1px solid #dfe6e9;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #0984e3;
+    color: white;
+}
+
+td {
+    background-color: #f1f2f6;
+}
+/* Link */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #0984e3;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #74b9ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    form {
+        width: 90%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
